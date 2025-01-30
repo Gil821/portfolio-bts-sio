@@ -1,0 +1,147 @@
+/* Palette de couleurs */
+:root {
+    --bleu-fonce: #1a2b4c;
+    --bleu-clair: #3B82F6;
+    --gris-clair: #cccccc;
+    --anthracite: #1c1c1c;
+    --gris-fonce: #6B7280;
+    --blanc: #ffffff;
+}
+/*image arriere plan*/
+body {
+    background-image: url("/conception/charte-graphique/image/fond_d_ecran_informatique_ordinateurs_wallpaper_011.jpg");
+  }
+
+/* En-tête */
+header {
+    background: var(--bleu-fonce);
+    color: #ffffff;
+    height: 50px;
+    padding: 10px 20px; /* Réduit le padding pour une en-tête plus petite */
+    position: fixed; /* Fixe l'en-tête en haut */
+    top: 0; /* Positionne l'en-tête en haut */
+    left: 0; /* Positionne l'en-tête à gauche */
+    width: 100%; /* Prend toute la largeur */
+    z-index: 1000; /* Assure que l'en-tête est au-dessus des autres éléments */
+    display: flex; /* Utilise Flexbox */
+    justify-content: space-between; /* Espace entre le titre et les liens */
+    align-items: center; /* Centre verticalement les éléments */
+    font-size: 0.8em; /* Réduit la taille de la police pour un en-tête plus petite */
+}
+
+.header-list {
+    display: flex; /* Aligne les éléments horizontalement */
+    list-style: none; /* Supprime les puces des listes */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les espacements par défaut */
+}
+
+.header-list li {
+    margin-right: 20px; /* Espacement entre les éléments */
+}
+
+.header-list li:last-child {
+    margin-right: 0; /* Pas d'espacement après le dernier élément */
+}
+
+.header-list a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: var(--blanc); /* Couleur du texte (ajustable) */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1em; /* Réduit la taille de la police pour un en-tête plus petite */
+}
+
+nav {
+    margin: 0; /* Supprime la marge pour le nav */
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px; /* Ajuste la marge entre les liens */
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-color: var(--anthracite); /* Couleur de fond */
+    color: var(--anthracite); /* Couleur du texte */
+    font-family: Arial, sans-serif; /* Police de caractères */
+    line-height: 1.6; /* Hauteur de ligne pour améliorer la lisibilité */
+    margin: 0; /* Enlève la marge par défaut */
+    padding: 20px; /* Ajoute un padding autour du contenu */
+}
+
+ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 0; /* Supprime la marge par défaut */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenu {
+    flex: 1; /* Permet de pousser le footer en bas si le contenu est insuffisant */
+}
+
+
+
+main {
+    margin-top: 50px; /* Compense la hauteur du header */
+    padding: 20px;
+    font-size: 16px;
+    flex: 1; /* Permet au main de prendre tout l'espace disponible */
+    padding: 20px; /* Ajoute un peu d'espace autour du contenu */
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: -140px; /* Le footer déborde de 10px sous le viewport */
+    left: 0;
+    width: 100%;
+    background-color:var(--gris-clair);
+    color: var(--noir-profond);
+    text-align: center;
+    padding: 5px 0;
+    font-size: 12px;
+    }
+
+/* Styles supplémentaires pour le contenu */
+section {
+    padding: 5px;
+    background-color:var(--blanc); /* Couleur de fond du contenu */
+    margin: 20px; /* Marge autour des sections */
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+      radial-gradient(farthest-side,#000 98%,#0000) 55% 20%/8px 8px no-repeat,  
+      #ffcc00;
+    box-shadow: 2px -6px 12px 0px inset rgba(0, 0, 0, 0.7);
+    animation: l4 .5s infinite steps(5) alternate;
+  }
+  @keyframes l4{ 
+      0% {clip-path: polygon(50% 50%,100%   0,100% 0,0 0,0 100%,100% 100%,100% 100%)}
+    100% {clip-path: polygon(50% 50%,100% 65%,100% 0,0 0,0 100%,100% 100%,100%  35%)}
+  }
