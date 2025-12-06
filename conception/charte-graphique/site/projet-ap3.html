@@ -46,137 +46,155 @@
 
             <!-- 1. Contexte du projet -->
             <div class="projet-section">
-                <h2><span class="section-number">1</span> Contexte du projet</h2>
+                <h2><i class="fas fa-info-circle"></i> Contexte du projet</h2>
                 <div class="projet-content">
                     <div class="info-grid">
                         <div class="info-item">
                             <h4><i class="fas fa-map-marker-alt"></i> Où</h4>
-                            <p>À compléter...</p>
+                            <p>IFIDE SUP'FORMATION - Sites de Strasbourg-Eckbolsheim, Mulhouse et Colmar (Alsace)</p>
                         </div>
                         <div class="info-item">
                             <h4><i class="fas fa-calendar-alt"></i> Quand</h4>
-                            <p>À compléter...</p>
+                            <p>Du 11/09/2025 au 30/11/2025 (Durée : 8 semaines)</p>
                         </div>
                         <div class="info-item">
                             <h4><i class="fas fa-building"></i> Cadre</h4>
-                            <p>À compléter...</p>
+                            <p>Projet BTS SIO - Création d'un SI hautement disponible et interconnecté</p>
                         </div>
                     </div>
                     <div class="info-block">
                         <h4><i class="fas fa-exclamation-circle"></i> Problème / Besoin métier initial</h4>
-                        <p>À compléter...</p>
+                        <p>Face à une demande croissante en formation professionnelle, IFIDE SUP'FORMATION souhaite s'implanter à Mulhouse et Colmar. La DSI doit créer un réseau informatique indépendant avec une infrastructure unifiée entre les trois établissements (Strasbourg, Mulhouse et Colmar), intégrant redondance des services, haute disponibilité et sécurisation des données.</p>
                     </div>
                     <div class="info-block">
                         <h4><i class="fas fa-user-tie"></i> Situation professionnelle simulée</h4>
-                        <p>À compléter...</p>
+                        <p>Mise en place d'une solution technique sur le réseau de l'entreprise, intégration des serveurs sur le LAN et activation des techniques de sécurisation : authentification forte, redondance des services, chiffrement des données, filtrage des services par le firewall.</p>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-info-circle"></i> Présentation de l'entreprise</h4>
+                        <p>IFIDE SUP'FORMATION est un centre de formation Informatique (partenaire référencé "Microsoft Action Pack"), centre de formation par alternance et établissement d'enseignement privé implanté à Strasbourg-Eckbolsheim. Acteur majeur de la formation professionnelle en Alsace, IFIDE est reconnu pour la qualité de ses formations (référencé QUALITE auprès des OPCAs) dans les domaines de la gestion, commerce, RH, informatique et comptabilité.</p>
                     </div>
                 </div>
             </div>
 
             <!-- 2. Objectifs du projet -->
             <div class="projet-section">
-                <h2><span class="section-number">2</span> Objectifs du projet</h2>
+                <h2><i class="fas fa-bullseye"></i> Objectifs du projet</h2>
                 <div class="projet-content">
                     <ul class="objectifs-list">
-                        <li><i class="fas fa-download"></i> <strong>Installer, configurer :</strong> À compléter...</li>
-                        <li><i class="fas fa-shield-alt"></i> <strong>Sécuriser :</strong> À compléter...</li>
-                        <li><i class="fas fa-vial"></i> <strong>Tester :</strong> À compléter...</li>
-                        <li><i class="fas fa-file-alt"></i> <strong>Documenter :</strong> À compléter...</li>
+                        <li><i class="fas fa-users"></i> <strong>Amélioration du service utilisateurs :</strong> Création d'un SI indépendant, uniformisation du SI, liaison inter-sites Strasbourg-Mulhouse-Colmar, redondance des services</li>
+                        <li><i class="fas fa-euro-sign"></i> <strong>Retour sur investissement :</strong> Réduction des coûts de possession et d'exploitation, facilité d'administration, documentation complète (budget max : 100 000 € HT)</li>
+                        <li><i class="fas fa-handshake"></i> <strong>Travail collaboratif :</strong> Partage et accessibilité des données inter-sites (sécurisé et redondé)</li>
+                        <li><i class="fas fa-shield-alt"></i> <strong>Sécurité :</strong> Plan de continuité d'activité (PCA), redondance serveurs/services/données, sauvegarde régulière</li>
                     </ul>
                 </div>
             </div>
 
             <!-- 3. Environnement technique -->
             <div class="projet-section">
-                <h2><span class="section-number">3</span> Environnement technique</h2>
+                <h2><i class="fas fa-server"></i> Environnement technique</h2>
                 <div class="projet-content">
                     <div class="tech-grid">
                         <div class="tech-item">
                             <h4><i class="fas fa-server"></i> Matériel / VM</h4>
-                            <p>À compléter...</p>
+                            <p>6 serveurs Windows Server 2022 (2 par site), Serveur SAN avec iSCSI, 3 pare-feux</p>
                         </div>
                         <div class="tech-item">
                             <h4><i class="fas fa-desktop"></i> OS</h4>
-                            <p>À compléter...</p>
+                            <p>Windows Server 2022 Standard</p>
                         </div>
                         <div class="tech-item">
                             <h4><i class="fas fa-cogs"></i> Services</h4>
-                            <p>À compléter...</p>
+                            <p>ADDS, DNS, DHCP, DHCP Failover, DFS, DFSR (Réplication), Shadow Copy</p>
                         </div>
                         <div class="tech-item">
                             <h4><i class="fas fa-network-wired"></i> Réseau</h4>
-                            <p>À compléter...</p>
+                            <p>LAN Site A (Strasbourg) + LAN Site B (Mulhouse) + LAN Site C (Colmar), liaisons WAN inter-sites chiffrées (VPN IPsec/OpenVPN)</p>
                         </div>
                         <div class="tech-item">
-                            <h4><i class="fas fa-tools"></i> Outils utilisés</h4>
-                            <p>À compléter...</p>
+                            <h4><i class="fas fa-fire"></i> Pare-feux</h4>
+                            <p>pfSense ou Stormshield (1 par site, 3 au total)</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4><i class="fas fa-tools"></i> Outils</h4>
+                            <p>Draw.io/Visio, GanttProject, Trello/Notion, VMware/Hyper-V</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 4. Procédure / Réalisation -->
+            <!-- 4. Procédure / Réalisation (Lots) -->
             <div class="projet-section">
-                <h2><span class="section-number">4</span> Procédure / Réalisation</h2>
+                <h2><i class="fas fa-tasks"></i> Procédure / Réalisation</h2>
                 <div class="projet-content">
-                    <ol class="procedure-list">
-                        <li>Étape 1 : À compléter...</li>
-                        <li>Étape 2 : À compléter...</li>
-                        <li>Étape 3 : À compléter...</li>
-                        <li>Étape 4 : À compléter...</li>
-                        <li>Étape 5 : À compléter...</li>
-                    </ol>
-                </div>
-            </div>
-
-            <!-- 5. Preuves (Traces techniques) -->
-            <div class="projet-section">
-                <h2><span class="section-number">5</span> Preuves (Traces techniques)</h2>
-                <div class="projet-content">
-                    <div class="preuve-card">
-                        <h4>Preuve 1</h4>
-                        <div class="preuve-details">
-                            <p><strong>Contexte :</strong> À compléter...</p>
-                            <p><strong>Objectif :</strong> À compléter...</p>
-                            <p><strong>Sécurité :</strong> À compléter...</p>
-                        </div>
-                        <div class="preuve-media">
-                            <p class="placeholder"><i class="fas fa-image"></i> Captures, logs, scripts, schémas, tests...</p>
-                        </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-box"></i> LOT 1 - Infrastructure réseau et VPN</h4>
+                        <ul>
+                            <li>3 pare-feux (pfSense ou Stormshield) - 1 sur chaque site</li>
+                            <li>VPN site à site (IPsec, OpenVPN ou autre) entre les 3 sites (Strasbourg, Mulhouse, Colmar)</li>
+                            <li>Documentation d'installation et configuration V1</li>
+                        </ul>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-box"></i> LOT 2 - Serveurs Active Directory</h4>
+                        <ul>
+                            <li>6 serveurs Windows Server 2022 Standard</li>
+                            <li>Rôles : ADDS, DNS, DHCP et DHCP de basculement</li>
+                            <li>2 serveurs sur Site A (Strasbourg) + 2 serveurs sur Site B (Mulhouse) + 2 serveurs sur Site C (Colmar)</li>
+                            <li>Documentation d'installation et configuration V1</li>
+                        </ul>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-box"></i> LOT 3 - Réplication et sauvegarde</h4>
+                        <ul>
+                            <li>DFS + DFSR (Réplication) fonctionnel sur les 6 serveurs des 3 sites</li>
+                            <li>Sauvegarde et Shadow Copy sur stockage séparé</li>
+                            <li>Serveur SAN avec montage iSCSI</li>
+                            <li>Documentation d'installation et configuration V1</li>
+                        </ul>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-box"></i> LOT 4 - Sécurisation</h4>
+                        <ul>
+                            <li>Application des consignes et GPO (Annexe 2)</li>
+                            <li>Règles de pare-feu configurées (WAN, LAN et VPN)</li>
+                            <li>Respect des recommandations ANSSI (IPsec, mots de passe, pare-feu)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- 6. Mesures de sécurité appliquées -->
+            <!-- Mesures de sécurité appliquées -->
             <div class="projet-section">
-                <h2><span class="section-number">6</span> Mesures de sécurité appliquées</h2>
+                <h2><i class="fas fa-shield-alt"></i> Mesures de sécurité appliquées</h2>
                 <div class="projet-content">
                     <ul class="security-list">
-                        <li><i class="fas fa-user-lock"></i> <strong>Droits, permissions :</strong> À compléter...</li>
-                        <li><i class="fas fa-fire"></i> <strong>Pare-feu, VLAN :</strong> À compléter...</li>
-                        <li><i class="fas fa-database"></i> <strong>Sauvegardes :</strong> À compléter...</li>
-                        <li><i class="fas fa-sync-alt"></i> <strong>Mises à jour :</strong> À compléter...</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Bonnes pratiques :</strong> À compléter...</li>
+                        <li><i class="fas fa-user-lock"></i> <strong>Droits, permissions :</strong> GPO selon Annexe 2, gestion des accès via Active Directory, authentification forte</li>
+                        <li><i class="fas fa-fire"></i> <strong>Pare-feu, VLAN :</strong> Règles pare-feu (WAN, LAN, VPN), pfSense/Stormshield selon recommandations ANSSI (Annexe 6)</li>
+                        <li><i class="fas fa-database"></i> <strong>Sauvegardes :</strong> Shadow Copy, stockage SAN avec iSCSI, réplication DFSR inter-sites</li>
+                        <li><i class="fas fa-key"></i> <strong>Chiffrement :</strong> VPN IPsec/OpenVPN pour liaison WAN, recommandations ANSSI (Annexe 5)</li>
+                        <li><i class="fas fa-lock"></i> <strong>Mots de passe :</strong> Politique selon recommandations ANSSI (Annexe 7)</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bonnes pratiques :</strong> Administration sécurisée (Annexe 8), démarche ITIL/ISO 2700x</li>
                     </ul>
                 </div>
             </div>
 
             <!-- 7. Tests et validation -->
             <div class="projet-section">
-                <h2><span class="section-number">7</span> Tests et validation</h2>
+                <h2><i class="fas fa-vial"></i> Tests et validation</h2>
                 <div class="projet-content">
                     <div class="test-grid">
                         <div class="test-item">
                             <h4><i class="fas fa-vial"></i> Tests réalisés</h4>
-                            <p>À compléter...</p>
+                            <p>Tests de connectivité VPN inter-sites, tests DHCP failover, tests de réplication DFS/DFSR, tests de restauration Shadow Copy, validation des GPO</p>
                         </div>
                         <div class="test-item">
                             <h4><i class="fas fa-file-code"></i> Logs consultés</h4>
-                            <p>À compléter...</p>
+                            <p>Journaux Windows Server, logs pare-feu (pfSense/Stormshield), logs VPN, logs Active Directory</p>
                         </div>
                         <div class="test-item">
                             <h4><i class="fas fa-check-double"></i> Résultats obtenus</h4>
-                            <p>À compléter...</p>
+                            <p>Démonstration technique lors de l'Oral 2 (30 min) - Recettage de la solution complète devant les formateurs</p>
                         </div>
                     </div>
                 </div>
@@ -184,20 +202,20 @@
 
             <!-- 8. Difficultés rencontrées et solutions -->
             <div class="projet-section">
-                <h2><span class="section-number">8</span> Difficultés rencontrées et solutions</h2>
+                <h2><i class="fas fa-exclamation-triangle"></i> Difficultés rencontrées et solutions</h2>
                 <div class="projet-content">
                     <div class="difficulty-card">
                         <div class="difficulty-item">
                             <h4><i class="fas fa-exclamation-triangle"></i> Problèmes techniques</h4>
-                            <p>À compléter...</p>
+                            <p>À compléter après réalisation du projet...</p>
                         </div>
                         <div class="difficulty-item">
                             <h4><i class="fas fa-lightbulb"></i> Méthodes de résolution</h4>
-                            <p>À compléter...</p>
+                            <p>À compléter après réalisation du projet...</p>
                         </div>
                         <div class="difficulty-item">
                             <h4><i class="fas fa-graduation-cap"></i> Ce qui a été appris</h4>
-                            <p>À compléter...</p>
+                            <p>Infrastructure haute disponibilité, VPN site à site, réplication DFS/DFSR, administration Windows Server, sécurisation selon normes ANSSI</p>
                         </div>
                     </div>
                 </div>
@@ -205,63 +223,78 @@
 
             <!-- 9. Améliorations possibles (PDCA – SMSI) -->
             <div class="projet-section">
-                <h2><span class="section-number">9</span> Améliorations possibles (PDCA – SMSI)</h2>
+                <h2><i class="fas fa-chart-line"></i> Améliorations possibles (PDCA – SMSI)</h2>
                 <div class="projet-content">
                     <ul class="ameliorations-list">
-                        <li><i class="fas fa-robot"></i> <strong>Automatisation :</strong> À compléter...</li>
-                        <li><i class="fas fa-lock"></i> <strong>Sécurisation :</strong> À compléter...</li>
-                        <li><i class="fas fa-book"></i> <strong>Documentation supplémentaire :</strong> À compléter...</li>
-                        <li><i class="fas fa-chart-line"></i> <strong>Supervision :</strong> À compléter...</li>
-                        <li><i class="fas fa-redo"></i> <strong>PRA / MCO :</strong> À compléter...</li>
+                        <li><i class="fas fa-robot"></i> <strong>Automatisation :</strong> Scripts PowerShell pour déploiement et maintenance, automatisation des sauvegardes</li>
+                        <li><i class="fas fa-lock"></i> <strong>Sécurisation :</strong> Mise en place d'un SIEM, audit de sécurité régulier, tests d'intrusion</li>
+                        <li><i class="fas fa-book"></i> <strong>Documentation supplémentaire :</strong> Procédures de restauration, guides utilisateurs, FAQ</li>
+                        <li><i class="fas fa-chart-line"></i> <strong>Supervision :</strong> Outils de monitoring (Zabbix, PRTG) pour surveiller l'infrastructure et les services</li>
+                        <li><i class="fas fa-redo"></i> <strong>PRA / MCO :</strong> Plan de Reprise d'Activité complet, tests de basculement réguliers, site de secours</li>
                     </ul>
                 </div>
             </div>
 
             <!-- 10. Compétences BTS SISR mobilisées -->
             <div class="projet-section">
-                <h2><span class="section-number">10</span> Compétences BTS SISR mobilisées</h2>
+                <h2><i class="fas fa-graduation-cap"></i> Compétences BTS SISR mobilisées</h2>
                 <div class="projet-content">
                     <div class="competences-tags">
-                        <span class="competence-tag"><i class="fas fa-download"></i> Installation / configuration</span>
-                        <span class="competence-tag"><i class="fas fa-user-cog"></i> Administration</span>
-                        <span class="competence-tag"><i class="fas fa-network-wired"></i> Réseaux</span>
-                        <span class="competence-tag"><i class="fas fa-shield-alt"></i> Sécurité</span>
-                        <span class="competence-tag"><i class="fas fa-eye"></i> Supervision</span>
-                        <span class="competence-tag"><i class="fas fa-file-alt"></i> Documentation</span>
-                        <span class="competence-tag"><i class="fas fa-search"></i> Analyse de risque</span>
+                        <span class="competence-tag"><i class="fas fa-server"></i> Installation Windows Server</span>
+                        <span class="competence-tag"><i class="fas fa-sitemap"></i> Active Directory (ADDS)</span>
+                        <span class="competence-tag"><i class="fas fa-network-wired"></i> Services réseau (DNS, DHCP)</span>
+                        <span class="competence-tag"><i class="fas fa-sync-alt"></i> Haute disponibilité (Failover)</span>
+                        <span class="competence-tag"><i class="fas fa-copy"></i> Réplication (DFS/DFSR)</span>
+                        <span class="competence-tag"><i class="fas fa-lock"></i> VPN site à site (IPsec)</span>
+                        <span class="competence-tag"><i class="fas fa-fire"></i> Pare-feu (pfSense/Stormshield)</span>
+                        <span class="competence-tag"><i class="fas fa-hdd"></i> Stockage (SAN, iSCSI)</span>
+                        <span class="competence-tag"><i class="fas fa-database"></i> Sauvegarde (Shadow Copy)</span>
+                        <span class="competence-tag"><i class="fas fa-shield-alt"></i> Sécurité (GPO, ANSSI)</span>
+                        <span class="competence-tag"><i class="fas fa-file-alt"></i> Documentation technique</span>
+                        <span class="competence-tag"><i class="fas fa-project-diagram"></i> Gestion de projet</span>
                     </div>
                 </div>
             </div>
 
             <!-- 11. Documentation -->
             <div class="projet-section">
-                <h2><span class="section-number">11</span> Documentation</h2>
+                <h2><i class="fas fa-file-alt"></i> Documentation</h2>
                 <div class="projet-content">
-                    <div class="doc-category">
-                        <h3><i class="fas fa-cog"></i> A. Documentation technique (pour les administrateurs)</h3>
-                        <ul>
-                            <li>Procédure d'installation</li>
-                            <li>Procédure de configuration</li>
-                            <li>Procédure de sauvegarde / restauration</li>
-                            <li>Fichier de paramétrage</li>
-                            <li>Script d'installation</li>
-                            <li>Plan d'adressage</li>
-                        </ul>
+                    <div class="doc-download">
+                        <a href="docs/documentation-ap3-ifide.pdf" class="btn-doc" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Télécharger la documentation complète (PDF)
+                        </a>
                     </div>
-                    <div class="doc-category">
-                        <h3><i class="fas fa-user"></i> B. Documentation utilisateur (si applicable)</h3>
-                        <ul>
-                            <li>Guide utilisateur (simple)</li>
-                            <li>Étapes pour se connecter / utiliser le service</li>
-                        </ul>
+                </div>
+            </div>
+
+            <!-- Planning et Livrables -->
+            <div class="projet-section">
+                <h2><i class="fas fa-calendar-check"></i> Planning et Livrables</h2>
+                <div class="projet-content">
+                    <div class="info-block">
+                        <h4><i class="fas fa-flag"></i> Lancement du projet</h4>
+                        <p><strong>Date :</strong> 11 septembre 2025</p>
                     </div>
-                    <div class="doc-category">
-                        <h3><i class="fas fa-shield-alt"></i> C. Documentation SMSI (si applicable)</h3>
-                        <ul>
-                            <li>Analyse de risques</li>
-                            <li>Politique de sécurité appliquée</li>
-                            <li>Bonnes pratiques associées</li>
-                        </ul>
+                    <div class="info-block">
+                        <h4><i class="fas fa-microphone"></i> Oral 1</h4>
+                        <p><strong>Date :</strong> Jeudi 16 octobre 2025 | Présentation orale de réponse au CDC (15 min : 10 min présentation + 5 min Q/R)</p>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-file-upload"></i> Livrable 1</h4>
+                        <p><strong>Date :</strong> Lundi 21 octobre 2025 (avant 23h59) | Proposition technique et commerciale (réponse CDC, schéma réseau, budget, Gantt)</p>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-microphone"></i> Oral 2</h4>
+                        <p><strong>Date :</strong> Jeudi 20 novembre 2025 | Phase 1 : Rapport de clôture (15 min) + Phase 2 : Démonstration technique (30 min)</p>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-file-upload"></i> Livrables 2 & 3</h4>
+                        <p><strong>Date :</strong> Vendredi 21 novembre 2025 (avant 23h59) | Fiche situation professionnelle + Documentation technique complète</p>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-flag-checkered"></i> Fin du projet</h4>
+                        <p><strong>Date :</strong> 30 novembre 2025</p>
                     </div>
                 </div>
             </div>
@@ -277,4 +310,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-

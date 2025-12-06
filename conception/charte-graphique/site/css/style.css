@@ -1496,6 +1496,36 @@ body {
     color: var(--accent-primary);
 }
 
+/* Doc Download Button */
+.doc-download {
+    text-align: center;
+    padding: 2rem;
+}
+
+.btn-doc {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2.5rem;
+    background: var(--accent-gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-doc i {
+    font-size: 1.5rem;
+}
+
+.btn-doc:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
 /* Responsive for Project Detail */
 @media (max-width: 768px) {
     .projet-header h1 {
