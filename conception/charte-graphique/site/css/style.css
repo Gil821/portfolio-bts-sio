@@ -1500,6 +1500,10 @@ body {
 .doc-download {
     text-align: center;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 .btn-doc {
@@ -1515,6 +1519,9 @@ body {
     font-weight: 600;
     transition: all var(--transition-fast);
     box-shadow: var(--shadow-md);
+    width: 100%;
+    max-width: 500px;
+    justify-content: center;
 }
 
 .btn-doc i {
@@ -1524,6 +1531,26 @@ body {
 .btn-doc:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-glow);
+}
+
+.doc-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    transition: all var(--transition-fast);
+}
+
+.doc-link:hover {
+    color: var(--accent-secondary);
+    text-decoration: underline;
+}
+
+.doc-link i {
+    font-size: 0.9rem;
 }
 
 /* Responsive for Project Detail */
