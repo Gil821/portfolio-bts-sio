@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP4 - Sécurité Civile | Gil DELORY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation latérale -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <div class="avatar">GD</div>
+            <span class="nav-name">Gil DELORY</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-user"></i> Profil</a></li>
+            <li><a href="formations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Formations</a></li>
+            <li><a href="experiences.html" class="nav-link"><i class="fas fa-briefcase"></i> Expériences</a></li>
+            <li><a href="projets.html" class="nav-link active"><i class="fas fa-code"></i> Projets</a></li>
+            <li><a href="certifications.html" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a></li>
+            <li><a href="veille.html" class="nav-link"><i class="fas fa-rss"></i> Veille Tech</a></li>
+            <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Bouton menu mobile -->
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+
+        <section class="section projet-detail">
+            <!-- En-tête du projet -->
+            <div class="projet-header">
+                <a href="projets.html" class="btn-back"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+                <span class="project-badge-large">AP4</span>
+                <h1>Sécurité Civile</h1>
+            </div>
+
+            <!-- 1. Contexte du projet -->
+            <div class="projet-section">
+                <h2><i class="fas fa-info-circle"></i> Contexte du projet</h2>
+                <div class="projet-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h4><i class="fas fa-map-marker-alt"></i> Où</h4>
+                            <p>SIDSIC - Service Interministériel Départemental des Systèmes d'Information et de Communication (Préfecture)</p>
+                        </div>
+                        <div class="info-item">
+                            <h4><i class="fas fa-calendar-alt"></i> Quand</h4>
+                            <p>Du 21/01/2025 au 15/04/2025 (Durée : 6 semaines)</p>
+                        </div>
+                        <div class="info-item">
+                            <h4><i class="fas fa-building"></i> Cadre</h4>
+                            <p>Projet BTS SIO - Résilience informatique des Centres Opérationnels Départementaux et connexion distante sécurisée</p>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-exclamation-circle"></i> Problème / Besoin métier initial</h4>
+                        <p>À plusieurs reprises en salle de crise, la Préfecture n'avait plus accès à la téléphonie ou à Internet, obligeant l'utilisation du réseau mobile parfois saturé. Le SIDSIC doit proposer une solution technique autonome et redondée pour garantir le fonctionnement permanent des Centres Opérationnels Départementaux (COD) et permettre aux agents de terrain d'accéder aux ressources et outils métiers de façon sécurisée.</p>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-user-tie"></i> Situation professionnelle simulée</h4>
+                        <p>Au sein du SIDSIC, mise en œuvre d'une solution technique assurant le fonctionnement permanent et optimum du COD : redondance Internet, messagerie électronique locale, supervision des équipements, et connexion distante sécurisée par VPN OpenVPN Road Warrior pour les agents de terrain.</p>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fas fa-info-circle"></i> Présentation de l'organisation</h4>
+                        <p>Le SIDSIC est placé sous l'autorité du secrétaire général de la préfecture. Il est chargé de la supervision et de la maintenance des réseaux informatiques et télécoms gouvernementaux, de la continuité des liaisons gouvernementales en situation de crise, et de la gestion informatique et infrastructure du Centre Opérationnel Départemental (COD).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Objectifs du projet -->
+            <div class="projet-section">
+                <h2><i class="fas fa-bullseye"></i> Objectifs du projet</h2>
+                <div class="projet-content">
+                    <ul class="objectifs-list">
+                        <li><i class="fas fa-random"></i> <strong>Haute disponibilité réseau :</strong> Mise en œuvre de 2 routeurs avec 2 accès Internet redondés pour garantir la continuité de service en cas de panne d'un lien WAN</li>
+                        <li><i class="fas fa-sitemap"></i> <strong>Active Directory :</strong> Déploiement de 2 serveurs Active Directory (Principal + Secondaire) pour l'authentification et la gestion centralisée des utilisateurs</li>
+                        <li><i class="fas fa-envelope"></i> <strong>Messagerie électronique :</strong> Installation d'un serveur de messagerie local couplé à l'Active Directory, accessible uniquement en LAN et via VPN RW</li>
+                        <li><i class="fas fa-chart-line"></i> <strong>Supervision et monitoring :</strong> Mise en place d'un outil de supervision des serveurs et équipements avec alertes par mail aux administrateurs en cas de panne et historique des indisponibilités</li>
+                        <li><i class="fas fa-network-wired"></i> <strong>DMZ :</strong> Création d'une zone démilitarisée avec règles de pare-feu adaptées pour exposer le serveur eBrigade en accès dégradé depuis l'extérieur</li>
+                        <li><i class="fas fa-lock"></i> <strong>VPN Road Warrior :</strong> Mise en œuvre d'une connexion OpenVPN Road Warrior permettant aux agents de terrain d'accéder aux ressources métiers (messagerie, VoIP, eBrigade) de façon sécurisée</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. Environnement technique -->
+            <div class="projet-section">
+                <h2><i class="fas fa-server"></i> Environnement technique</h2>
+                <div class="projet-content">
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <h4><i class="fas fa-server"></i> Matériel / VM</h4>
+                            <p>Machines virtuelles (environnement virtualisé), 2 routeurs redondants</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4><i class="fas fa-desktop"></i> OS</h4>
+                            <p>Windows 10 Pro x64 (postes de travail), Windows Server (serveurs)</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4><i class="fas fa-cogs"></i> Services</h4>
+                            <p>Active Directory (ADDS), DNS, DHCP, Messagerie (serveur local), Supervision (Zabbix/Nagios), VoIP, eBrigade</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4><i class="fas fa-network-wired"></i> Réseau</h4>
+                            <p>LAN Préfecture + DMZ + WAN redondé (2 accès Internet), VPN Road Warrior (OpenVPN)</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4><i class="fas fa-fire"></i> Pare-feux</h4>
+                            <p>pfSense (gestion LAN, DMZ, WAN et règles VPN)</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4><i class="fas fa-tools"></i> Outils</h4>
+                            <p>VMware/Hyper-V, Draw.io/Visio, GanttProject, Trello/Notion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Procédure / Réalisation -->
+            <div class="projet-section">
+                <h2><i class="fas fa-tasks"></i> Procédure / Réalisation</h2>
+                <div class="projet-content">
+                    <ol class="procedure-list">
+                        <li>Analyse du cahier des charges et des retours d'expérience (REX) du SIDSIC</li>
+                        <li>Élaboration de la proposition technique et commerciale (comparatif des solutions)</li>
+                        <li>Configuration de la redondance réseau (2 routeurs + 2 liens WAN)</li>
+                        <li>Installation et configuration des 2 serveurs Active Directory (Principal + Secondaire)</li>
+                        <li>Déploiement du serveur de messagerie local couplé à l'Active Directory</li>
+                        <li>Installation et configuration de l'outil de supervision avec alertes mail</li>
+                        <li>Mise en place de la DMZ et configuration des règles de pare-feu</li>
+                        <li>Déploiement de la solution VPN OpenVPN Road Warrior</li>
+                        <li>Tests et validation de l'ensemble de la solution (recettage)</li>
+                        <li>Rédaction du rapport de clôture et de la documentation technique complète</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Mesures de sécurité appliquées -->
+            <div class="projet-section">
+                <h2><i class="fas fa-shield-alt"></i> Mesures de sécurité appliquées</h2>
+                <div class="projet-content">
+                    <ul class="security-list">
+                        <li><i class="fas fa-user-lock"></i> <strong>Authentification :</strong> Authentification AD préalable obligatoire pour l'accès au contenu des données et aux ressources internes</li>
+                        <li><i class="fas fa-lock"></i> <strong>VPN :</strong> Connexion OpenVPN Road Warrior chiffrée pour les accès distants ; messagerie et VoIP inaccessibles sans VPN établi</li>
+                        <li><i class="fas fa-fire"></i> <strong>Pare-feu, DMZ :</strong> Règles de filtrage adaptées (WAN, LAN, DMZ, VPN) selon les recommandations ANSSI (Annexe 2)</li>
+                        <li><i class="fas fa-chart-line"></i> <strong>Supervision :</strong> Monitoring en temps réel des serveurs et routeurs avec alertes immédiates par mail aux administrateurs en cas de dysfonctionnement</li>
+                        <li><i class="fas fa-random"></i> <strong>Redondance :</strong> Double accès Internet et routeurs redondés pour garantir la continuité de service du COD en situation de crise</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bonnes pratiques :</strong> Application des recommandations ANSSI, politique de mots de passe renforcée, administration sécurisée</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Compétences BTS SISR mobilisées -->
+            <div class="projet-section">
+                <h2><i class="fas fa-graduation-cap"></i> Compétences BTS SISR mobilisées</h2>
+                <div class="projet-content">
+                    <div class="competences-tags">
+                        <span class="competence-tag"><i class="fas fa-check-square"></i> D1.2 - Choix d'une solution</span>
+                        <span class="competence-tag"><i class="fas fa-rocket"></i> D1.3 - Mise en production d'un service</span>
+                        <span class="competence-tag"><i class="fas fa-cogs"></i> D2.1 - Exploitation des services</span>
+                        <span class="competence-tag"><i class="fas fa-star"></i> A2.1.2 - Évaluation et maintien de la qualité de service</span>
+                        <span class="competence-tag"><i class="fas fa-drafting-compass"></i> D3.1 - Conception d'une solution d'infrastructure</span>
+                        <span class="competence-tag"><i class="fas fa-desktop"></i> SI1 - Installation et administration système</span>
+                        <span class="competence-tag"><i class="fas fa-bell"></i> SI1 - Procédures d'alerte associées au service</span>
+                        <span class="competence-tag"><i class="fas fa-vial"></i> SI1 - Validation et documentation d'accès</span>
+                        <span class="competence-tag"><i class="fas fa-sitemap"></i> S3 - Gestion des éléments d'infrastructure</span>
+                        <span class="competence-tag"><i class="fas fa-chart-bar"></i> S3 - Supervision et métrologie avec alertes</span>
+                        <span class="competence-tag"><i class="fas fa-shield-alt"></i> S3 - Sécurisation du système informatique</span>
+                        <span class="competence-tag"><i class="fas fa-file-alt"></i> Documentation technique complète</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documentation -->
+            <div class="projet-section">
+                <h2><i class="fas fa-file-alt"></i> Documentation</h2>
+                <div class="projet-content">
+                    <div class="doc-download">
+                        <a href="docs/LIVRABLE_1_Reponse_CDC_GROUPE_1_AP4_Securite_Civile.pdf" class="btn-doc" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Livrable 1 - Réponse au cahier des charges (PDF)
+                        </a>
+                        <a href="docs/documentation-ap4-securite-civile.pdf" class="btn-doc" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Documentation technique complète (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Gil DELORY - Portfolio BTS SIO</p>
+        </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
