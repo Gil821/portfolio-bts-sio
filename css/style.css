@@ -1553,6 +1553,29 @@ body {
     font-size: 0.9rem;
 }
 
+/* Form Feedback Messages */
+.form-feedback {
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.form-success {
+    background: rgba(0, 212, 127, 0.1);
+    border: 1px solid rgba(0, 212, 127, 0.4);
+    color: #00d47f;
+}
+
+.form-error {
+    background: rgba(255, 80, 80, 0.1);
+    border: 1px solid rgba(255, 80, 80, 0.4);
+    color: #ff5050;
+}
+
 /* Responsive for Project Detail */
 @media (max-width: 768px) {
     .projet-header h1 {

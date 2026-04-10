@@ -43,20 +43,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ========================================
-    // Form Submission (placeholder)
+    // Form Submission (Formspree)
     // ========================================
-    const contactForm = document.querySelector('.contact-form');
+    const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            
-            // Show success message (you can integrate with a backend service)
-            alert(`Merci ${name} ! Votre message a été envoyé.`);
-            this.reset();
+
+            const btn = document.getElementById('btn-submit');
+            const feedback = document.getElementById('form-feedback');
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    feedback.className = 'form-feedback form-success';
+                    feedback.innerHTML = '<i class="fas fa-check-circle"></i> Message envoyé ! Je vous répondrai dès que possible.';
+                    feedback.style.display = 'block';
+                    contactForm.reset();
+                    btn.innerHTML = '<i class="fas fa-check"></i> Envoyé';
+                } else {
+                    throw new Error();
+                }
+            } catch {
+                feedback.className = 'form-feedback form-error';
+                feedback.innerHTML = '<i class="fas fa-exclamation-circle"></i> Une erreur est survenue. Merci de me contacter directement par email.';
+                feedback.style.display = 'block';
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer';
+            }
         });
     }
 
