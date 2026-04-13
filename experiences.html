@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expériences - Gil DELORY | BTS SIO</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation latérale -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <div class="avatar">GD</div>
+            <span class="nav-name">Gil DELORY</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-user"></i> Profil</a></li>
+            <li><a href="formations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Formations</a></li>
+            <li><a href="experiences.html" class="nav-link active"><i class="fas fa-briefcase"></i> Expériences</a></li>
+            <li><a href="projets.html" class="nav-link"><i class="fas fa-code"></i> Projets</a></li>
+            <li><a href="certifications.html" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a></li>
+            <li><a href="veille.html" class="nav-link"><i class="fas fa-rss"></i> Veille Tech</a></li>
+            <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Bouton menu mobile -->
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        
+        <!-- Section Expériences -->
+        <section id="experiences" class="section">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Mes Expériences Professionnelles</h2>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
+                        <div class="experience-info">
+                            <h3>Lynxmedia Informatique</h3>
+                            <span class="experience-duration"><i class="fas fa-calendar-alt"></i> Octobre 2024 - Août 2026</span>
+                        </div>
+                    </div>
+                    <div class="experience-body">
+                        <h4>Technicien d'Assistance Informatique (Alternance)</h4>
+                        <ul>
+                            <li>Installation et dépannage de matériel informatique (ordinateurs fixes et portables, imprimantes, scanners, téléphones portables, bornes Wi-Fi...)</li>
+                            <li>Accueil et conseil client</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="experience-info">
+                            <h3>Euro Information Service</h3>
+                            <span class="experience-duration"><i class="fas fa-calendar-alt"></i> Juin - Décembre 2023</span>
+                        </div>
+                    </div>
+                    <div class="experience-body">
+                        <h4>Technicien Itinérant</h4>
+                        <ul>
+                            <li>Installation et dépannage de matériel informatiques et réseaux</li>
+                            <li>Interventions sur ordinateurs fixes et portables, imprimantes, scanners, téléphones portables, bornes Wi-Fi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="experience-info">
+                            <h3>ACESI</h3>
+                            <span class="experience-duration"><i class="fas fa-calendar-alt"></i> Mars - Avril 2023</span>
+                        </div>
+                    </div>
+                    <div class="experience-body">
+                        <h4>Stage dans le cadre de la formation TAI</h4>
+                        <ul>
+                            <li>Création de tickets d'incidents</li>
+                            <li>Appels et prises en main à distance avec les utilisateurs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="experience-info">
+                            <h3>IMD Informatique</h3>
+                            <span class="experience-duration"><i class="fas fa-calendar-alt"></i> Janvier - Juillet 2022</span>
+                        </div>
+                    </div>
+                    <div class="experience-body">
+                        <h4>Stage PACE de 6 mois</h4>
+                        <ul>
+                            <li>Découverte du métier de technicien de maintenance informatique</li>
+                            <li>Apprentissage du contact avec les clients</li>
+                            <li>Intervention sur site chez particuliers et professionnels</li>
+                            <li>SAV sur différentes machines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Gil DELORY - Portfolio BTS SIO</p>
+        </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
