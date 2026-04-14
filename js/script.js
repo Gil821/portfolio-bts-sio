@@ -66,35 +66,24 @@ function initReadingProgress() {
 }
 
 // ========================================
-// Typewriter Effect
+// Subtitle Fade Toggle
 // ========================================
-function initTypewriter() {
-    const el = document.querySelector('.subtitle[data-typewriter]');
+function initSubtitleFade() {
+    const el = document.getElementById('subtitle-anim');
     if (!el) return;
 
-    const phrases = JSON.parse(el.getAttribute('data-typewriter'));
-    let pi = 0, ci = 0, deleting = false;
+    const phrases = ['Étudiant BTS SIO — Option SISR', 'Alternant chez Lynxmedia Informatique'];
+    let index = 0;
 
-    const cursor = document.createElement('span');
-    cursor.className = 'typewriter-cursor';
-    el.textContent = '';
-    el.appendChild(cursor);
-
-    function tick() {
-        const phrase = phrases[pi];
-        if (deleting) {
-            el.childNodes[0] && (el.childNodes[0].textContent = phrase.substring(0, --ci));
-        } else {
-            const textNode = el.childNodes[0] || el.insertBefore(document.createTextNode(''), cursor);
-            textNode.textContent = phrase.substring(0, ++ci);
-        }
-
-        let delay = deleting ? 40 : 80;
-        if (!deleting && ci === phrase.length) { delay = 2000; deleting = true; }
-        else if (deleting && ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; delay = 400; }
-        setTimeout(tick, delay);
-    }
-    setTimeout(tick, 600);
+    setInterval(() => {
+        el.style.transition = 'opacity 0.6s ease';
+        el.style.opacity = '0';
+        setTimeout(() => {
+            index = (index + 1) % phrases.length;
+            el.textContent = phrases[index];
+            el.style.opacity = '1';
+        }, 600);
+    }, 3000);
 }
 
 // ========================================
@@ -280,6 +269,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle();
     initBackToTop();
     initReadingProgress();
-    initTypewriter();
+    initSubtitleFade();
     initSkillBars();
 });
