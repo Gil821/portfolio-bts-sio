@@ -1118,6 +1118,124 @@ body {
 }
 
 /* ========================================
+   PDF MODAL
+======================================== */
+.pdf-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: fadeIn 0.2s ease;
+}
+
+.pdf-modal {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 460px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: fadeInUp 0.3s ease;
+}
+
+.pdf-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
+}
+
+.pdf-modal-close:hover {
+    color: var(--text-primary);
+}
+
+.pdf-modal-icon {
+    font-size: 3rem;
+    color: var(--accent-primary);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.pdf-modal h3 {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+}
+
+.pdf-modal p {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.pdf-modal-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-modal-view,
+.btn-modal-download {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-modal-view {
+    background: var(--accent-gradient);
+    color: white;
+}
+
+.btn-modal-view:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-modal-download {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-modal-download:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+    .pdf-modal-actions {
+        flex-direction: column;
+    }
+}
+
+/* ========================================
    RESPONSIVE DESIGN
 ======================================== */
 @media (max-width: 1024px) {

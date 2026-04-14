@@ -1,4 +1,49 @@
 // ========================================
+// PDF Document Modal
+// ========================================
+function openDocModal(title, pdfUrl) {
+    const existing = document.getElementById('pdf-modal-overlay');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.id = 'pdf-modal-overlay';
+    overlay.className = 'pdf-modal-overlay';
+    overlay.innerHTML = `
+        <div class="pdf-modal" role="dialog" aria-modal="true">
+            <button class="pdf-modal-close" onclick="closeDocModal()" aria-label="Fermer">&times;</button>
+            <div class="pdf-modal-icon"><i class="fas fa-file-pdf"></i></div>
+            <h3>${title}</h3>
+            <p>Que souhaitez-vous faire avec ce document ?</p>
+            <div class="pdf-modal-actions">
+                <a href="${pdfUrl}" target="_blank" class="btn-modal-view" onclick="closeDocModal()">
+                    <i class="fas fa-eye"></i> Visualiser
+                </a>
+                <a href="${pdfUrl}" download class="btn-modal-download">
+                    <i class="fas fa-download"></i> Télécharger
+                </a>
+            </div>
+        </div>
+    `;
+
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeDocModal();
+    });
+
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+}
+
+function closeDocModal() {
+    const overlay = document.getElementById('pdf-modal-overlay');
+    if (overlay) overlay.remove();
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeDocModal();
+});
+
+// ========================================
 // Mobile Menu Toggle
 // ========================================
 function toggleMobileMenu() {
