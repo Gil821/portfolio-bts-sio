@@ -10,13 +10,17 @@ function openDocModal(title, pdfUrl) {
     overlay.className = 'pdf-modal-overlay';
     overlay.innerHTML = `
         <div class="pdf-modal" role="dialog" aria-modal="true">
-            <button class="pdf-modal-close" onclick="closeDocModal()" aria-label="Fermer">&times;</button>
-            <div class="pdf-modal-icon"><i class="fas fa-file-pdf"></i></div>
-            <h3>${title}</h3>
-            <p>Que souhaitez-vous faire avec ce document ?</p>
-            <div class="pdf-modal-actions">
+            <div class="pdf-modal-header">
+                <i class="fas fa-file-pdf"></i>
+                <h3>${title}</h3>
+                <button class="pdf-modal-close" onclick="closeDocModal()" aria-label="Fermer">&times;</button>
+            </div>
+            <div class="pdf-modal-preview">
+                <iframe src="${pdfUrl}" title="${title}"></iframe>
+            </div>
+            <div class="pdf-modal-footer">
                 <a href="${pdfUrl}" target="_blank" class="btn-modal-view" onclick="closeDocModal()">
-                    <i class="fas fa-eye"></i> Visualiser
+                    <i class="fas fa-external-link-alt"></i> Ouvrir dans un nouvel onglet
                 </a>
                 <a href="${pdfUrl}" download class="btn-modal-download">
                     <i class="fas fa-download"></i> Télécharger
