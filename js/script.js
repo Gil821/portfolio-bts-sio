@@ -155,6 +155,45 @@ document.addEventListener('keydown', function(e) {
 });
 
 // ========================================
+// Share Button
+// ========================================
+function initShareButton() {
+    const header = document.querySelector('.section-header');
+    if (!header) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'btn-share';
+    btn.innerHTML = '<i class="fas fa-share-alt"></i> Partager ce profil';
+    btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            showToast('<i class="fas fa-check"></i> Lien copié dans le presse-papiers !');
+        }).catch(() => {
+            showToast('<i class="fas fa-link"></i> ' + window.location.href);
+        });
+    });
+    header.appendChild(btn);
+}
+
+function showToast(message) {
+    const existing = document.querySelector('.share-toast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = 'share-toast';
+    toast.innerHTML = message;
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => toast.classList.add('visible'));
+    });
+
+    setTimeout(() => {
+        toast.classList.remove('visible');
+        setTimeout(() => toast.remove(), 300);
+    }, 2500);
+}
+
+// ========================================
 // Mobile Menu Toggle
 // ========================================
 function toggleMobileMenu() {
@@ -271,4 +310,5 @@ document.addEventListener('DOMContentLoaded', function() {
     initReadingProgress();
     initSubtitleFade();
     initSkillBars();
+    initShareButton();
 });
