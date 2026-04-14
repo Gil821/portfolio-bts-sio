@@ -102,6 +102,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const btn = document.getElementById('btn-submit');
             const feedback = document.getElementById('form-feedback');
 
+            if (typeof grecaptcha !== 'undefined' && !grecaptcha.getResponse()) {
+                feedback.className = 'form-feedback form-error';
+                feedback.innerHTML = '<i class="fas fa-exclamation-circle"></i> Veuillez cocher la case "Je ne suis pas un robot".';
+                feedback.style.display = 'block';
+                return;
+            }
+
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
 
@@ -117,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     feedback.innerHTML = '<i class="fas fa-check-circle"></i> Message envoyé ! Je vous répondrai dès que possible.';
                     feedback.style.display = 'block';
                     contactForm.reset();
+                    if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
                     btn.innerHTML = '<i class="fas fa-check"></i> Envoyé';
                 } else {
                     throw new Error();

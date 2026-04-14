@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <!-- Navigation latérale -->
@@ -80,6 +81,7 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
                     </div>
+                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
                     <button type="submit" class="btn-submit" id="btn-submit">
                         <i class="fas fa-paper-plane"></i> Envoyer
                     </button>
