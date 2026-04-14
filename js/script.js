@@ -1,4 +1,122 @@
 // ========================================
+// Theme Toggle (dark / light)
+// ========================================
+(function() {
+    const saved = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+})();
+
+function initThemeToggle() {
+    const sidebar = document.querySelector('.sidebar');
+    if (!sidebar) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'theme-toggle';
+    btn.setAttribute('aria-label', 'Changer le thème');
+    updateThemeBtn(btn);
+    btn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn(btn);
+    });
+    sidebar.appendChild(btn);
+}
+
+function updateThemeBtn(btn) {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = isDark
+        ? '<i class="fas fa-sun"></i> Mode clair'
+        : '<i class="fas fa-moon"></i> Mode sombre';
+}
+
+// ========================================
+// Back To Top Button
+// ========================================
+function initBackToTop() {
+    const btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    btn.setAttribute('aria-label', 'Retour en haut');
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    document.body.appendChild(btn);
+
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 300);
+    }, { passive: true });
+}
+
+// ========================================
+// Reading Progress Bar
+// ========================================
+function initReadingProgress() {
+    if (!document.querySelector('.projet-detail')) return;
+
+    const bar = document.createElement('div');
+    bar.className = 'reading-progress';
+    document.body.prepend(bar);
+
+    window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const scrolled = doc.scrollTop || document.body.scrollTop;
+        const total = doc.scrollHeight - doc.clientHeight;
+        bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+    }, { passive: true });
+}
+
+// ========================================
+// Typewriter Effect
+// ========================================
+function initTypewriter() {
+    const el = document.querySelector('.subtitle[data-typewriter]');
+    if (!el) return;
+
+    const phrases = JSON.parse(el.getAttribute('data-typewriter'));
+    let pi = 0, ci = 0, deleting = false;
+
+    const cursor = document.createElement('span');
+    cursor.className = 'typewriter-cursor';
+    el.textContent = '';
+    el.appendChild(cursor);
+
+    function tick() {
+        const phrase = phrases[pi];
+        if (deleting) {
+            el.childNodes[0] && (el.childNodes[0].textContent = phrase.substring(0, --ci));
+        } else {
+            const textNode = el.childNodes[0] || el.insertBefore(document.createTextNode(''), cursor);
+            textNode.textContent = phrase.substring(0, ++ci);
+        }
+
+        let delay = deleting ? 40 : 80;
+        if (!deleting && ci === phrase.length) { delay = 2000; deleting = true; }
+        else if (deleting && ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; delay = 400; }
+        setTimeout(tick, delay);
+    }
+    setTimeout(tick, 600);
+}
+
+// ========================================
+// Skill Bars Animation
+// ========================================
+function initSkillBars() {
+    const bars = document.querySelectorAll('.skill-bar-fill');
+    if (!bars.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.width = entry.target.getAttribute('data-width');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    bars.forEach(bar => observer.observe(bar));
+}
+
+// ========================================
 // PDF Document Modal
 // ========================================
 function openDocModal(title, pdfUrl) {
@@ -158,4 +276,10 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     animateElements();
+
+    initThemeToggle();
+    initBackToTop();
+    initReadingProgress();
+    initTypewriter();
+    initSkillBars();
 });

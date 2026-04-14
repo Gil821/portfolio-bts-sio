@@ -1830,14 +1830,229 @@ body {
     .projet-header h1 {
         font-size: 2rem;
     }
-    
+
     .info-grid,
     .tech-grid,
     .test-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .procedure-list li {
         padding-left: 3.5rem;
     }
+}
+
+/* ========================================
+   LIGHT THEME
+======================================== */
+[data-theme="light"] {
+    --bg-primary: #f0f2f8;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f5f7ff;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a6a;
+    --text-muted: #8a8aaa;
+    --border-color: #dde1f0;
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .sidebar {
+    background: var(--bg-secondary);
+    border-right-color: var(--border-color);
+    box-shadow: 2px 0 20px rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .glitch {
+    color: var(--text-primary);
+    text-shadow: none;
+}
+
+/* ========================================
+   THEME TOGGLE BUTTON
+======================================== */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.75rem 1.2rem;
+    margin-top: 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-secondary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+    background: var(--bg-card-hover);
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.theme-toggle i {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* ========================================
+   BACK TO TOP BUTTON
+======================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 46px;
+    height: 46px;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 900;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   READING PROGRESS BAR
+======================================== */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent-gradient);
+    z-index: 2000;
+    transition: width 0.1s linear;
+}
+
+/* ========================================
+   SKILL BARS
+======================================== */
+.skills-section {
+    margin-top: 2.5rem;
+}
+
+.skills-section h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.skills-section h2 i {
+    color: var(--accent-primary);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+@media (max-width: 700px) {
+    .skills-grid { grid-template-columns: 1fr; }
+}
+
+.skill-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.skill-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-name i {
+    color: var(--accent-primary);
+    font-size: 0.85rem;
+}
+
+.skill-percent {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.skill-bar-track {
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 3px;
+    background: var(--accent-gradient);
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   TYPEWRITER
+======================================== */
+.typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: var(--accent-primary);
+    margin-left: 3px;
+    vertical-align: middle;
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
