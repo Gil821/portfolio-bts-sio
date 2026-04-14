@@ -62,12 +62,19 @@
                         <span class="keyword">Active Directory</span>
                         <span class="keyword">Windows Server</span>
                         <span class="keyword">VPN</span>
+                        <span class="keyword">OpenVPN</span>
                         <span class="keyword">pfSense</span>
+                        <span class="keyword">CARP</span>
                         <span class="keyword">ANSSI</span>
                         <span class="keyword">Cybersécurité</span>
                         <span class="keyword">Haute disponibilité</span>
+                        <span class="keyword">DMZ</span>
                         <span class="keyword">DFS</span>
                         <span class="keyword">iSCSI</span>
+                        <span class="keyword">Asterisk</span>
+                        <span class="keyword">VoIP</span>
+                        <span class="keyword">Zabbix</span>
+                        <span class="keyword">Modoboa</span>
                     </div>
                 </div>
             </div>
@@ -76,12 +83,10 @@
                 <h3><i class="fas fa-server"></i> Gestion de parc et inventaire</h3>
                 <div class="article-list">
                     <div class="veille-article">
-                        <span class="article-date">2024</span>
                         <h4>GLPI - Solution open-source de gestion de parc</h4>
                         <p>GLPI (Gestionnaire Libre de Parc Informatique) est une solution complète de gestion de parc, de tickets d'assistance et de gestion de configuration. Utilisée dans le projet PARCUS, cette solution permet l'inventaire automatisé via FusionInventory, la gestion des incidents et la traçabilité du matériel. Les dernières versions intègrent des améliorations en termes de performance et de sécurité.</p>
                     </div>
                     <div class="veille-article">
-                        <span class="article-date">2024</span>
                         <h4>FusionInventory - Inventaire automatisé</h4>
                         <p>FusionInventory est un agent d'inventaire qui s'intègre parfaitement avec GLPI. Il permet l'inventaire automatique du matériel et des logiciels installés sur les postes clients. Les évolutions récentes incluent une meilleure détection des équipements réseau et une amélioration de la collecte d'informations système.</p>
                     </div>
@@ -90,12 +95,10 @@
                 <h3><i class="fas fa-network-wired"></i> Infrastructure réseau et services</h3>
                 <div class="article-list">
                     <div class="veille-article">
-                        <span class="article-date">2024</span>
                         <h4>DHCP Failover - Haute disponibilité des services réseau</h4>
                         <p>Le DHCP Failover permet d'assurer la continuité de service en cas de panne d'un serveur DHCP. Cette technologie, utilisée dans le projet IFIDE, permet la répartition de charge et la synchronisation des baux entre deux serveurs. Les configurations modernes incluent la prise en charge de l'IPv6 et l'amélioration des mécanismes de synchronisation.</p>
                     </div>
                     <div class="veille-article">
-                        <span class="article-date">2024</span>
                         <h4>DFS et DFSR - Réplication de fichiers inter-sites</h4>
                         <p>Le Distributed File System (DFS) avec DFS Replication permet la réplication de fichiers entre plusieurs sites. Utilisé dans le projet IFIDE pour synchroniser les données entre Strasbourg, Mulhouse et Colmar, cette technologie évolue vers une meilleure gestion des conflits et une optimisation de la bande passante.</p>
                     </div>
@@ -104,33 +107,60 @@
                 <h3><i class="fas fa-shield-alt"></i> Sécurité et pare-feu</h3>
                 <div class="article-list">
                     <div class="veille-article">
-                        <span class="article-date">2024</span>
                         <h4>pfSense - Pare-feu open-source professionnel</h4>
                         <p>pfSense est une distribution FreeBSD transformée en pare-feu et routeur. Utilisé dans le projet IFIDE, il offre des fonctionnalités avancées de filtrage, de VPN (IPsec, OpenVPN) et de monitoring. Les dernières versions améliorent les performances et la sécurité, avec notamment le support des dernières normes VPN.</p>
                     </div>
                     <div class="veille-article">
-                        <span class="article-date">2024</span>
+                        <h4>DMZ pfSense - Zone démilitarisée et filtrage avancé</h4>
+                        <p>La DMZ (zone démilitarisée) est un sous-réseau isolé du LAN par des règles de pare-feu strictes, permettant d'exposer certains services (comme eBrigade) vers l'extérieur sans compromettre le réseau interne. Dans le projet AP4, pfSense gère trois interfaces (WAN, LAN, DMZ) avec des règles autorisant uniquement les flux nécessaires (ports 80/443 entrants, DNS), tout en bloquant le trafic DMZ vers LAN. La redirection de ports NAT permet d'acheminer les connexions entrantes vers les serveurs de la DMZ.</p>
+                    </div>
+                    <div class="veille-article">
+                        <h4>OpenVPN Road Warrior - VPN pour accès distants sécurisés</h4>
+                        <p>La configuration OpenVPN en mode Road Warrior permet à des utilisateurs nomades de se connecter de façon sécurisée à l'infrastructure interne depuis n'importe quel point d'accès Internet. Mise en œuvre dans le projet AP4 pour les agents de terrain du SIDSIC, cette solution repose sur une infrastructure à clés publiques (PKI) : une autorité de certification (CA) émet des certificats pour le serveur et chaque client. L'outil openvpn-client-export de pfSense simplifie la distribution des profils de configuration (.ovpn). Les ressources internes (messagerie, VoIP, eBrigade) restent inaccessibles sans VPN établi.</p>
+                    </div>
+                    <div class="veille-article">
                         <h4>Recommandations ANSSI - Cybersécurité des systèmes</h4>
-                        <p>L'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information) publie régulièrement des guides et recommandations pour sécuriser les systèmes d'information. Ces recommandations couvrent la configuration des pare-feu, les politiques de mots de passe, le chiffrement des communications (VPN IPsec) et les bonnes pratiques d'administration. Appliquées dans les projets PARCUS et IFIDE pour garantir la sécurité des infrastructures.</p>
+                        <p>L'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information) publie régulièrement des guides et recommandations pour sécuriser les systèmes d'information. Ces recommandations couvrent la configuration des pare-feu, les politiques de mots de passe, le chiffrement des communications (VPN IPsec) et les bonnes pratiques d'administration. Appliquées dans les projets PARCUS, IFIDE et AP4 pour garantir la sécurité des infrastructures.</p>
                     </div>
                 </div>
 
                 <h3><i class="fas fa-sync-alt"></i> Haute disponibilité et stockage</h3>
                 <div class="article-list">
                     <div class="veille-article">
-                        <span class="article-date">2024</span>
+                        <h4>CARP pfSense - Haute disponibilité et basculement automatique</h4>
+                        <p>CARP (Common Address Redundancy Protocol) est un protocole permettant à plusieurs pare-feux pfSense de partager une adresse IP virtuelle. En cas de défaillance du nœud MASTER, le nœud BACKUP prend automatiquement le relais sans interruption de service perceptible. Utilisé dans le projet AP4, cette configuration repose sur des IP virtuelles CARP sur les interfaces WAN, LAN et DMZ, combinée à la synchronisation des états de connexion et à la réplication des règles de pare-feu (High Availability Sync). Les règles NAT Outbound sont également adaptées pour forcer l'utilisation des adresses IP virtuelles, garantissant une continuité totale lors du basculement.</p>
+                    </div>
+                    <div class="veille-article">
                         <h4>iSCSI et SAN - Stockage réseau</h4>
                         <p>Le protocole iSCSI permet de créer un réseau de stockage (SAN) en utilisant l'infrastructure IP existante. Utilisé dans le projet IFIDE pour le stockage centralisé, cette technologie évolue vers de meilleures performances (iSCSI offload) et une meilleure intégration avec les solutions de virtualisation.</p>
                     </div>
                     <div class="veille-article">
-                        <span class="article-date">2024</span>
                         <h4>Shadow Copy - Sauvegarde et restauration</h4>
                         <p>Les Shadow Copies (Volume Snapshot Service) permettent de créer des instantanés de volumes pour faciliter la restauration de fichiers. Cette technologie, intégrée à Windows Server, est utilisée dans le projet IFIDE pour la continuité d'activité et la protection des données.</p>
                     </div>
                     <div class="veille-article">
-                        <span class="article-date">2024</span>
                         <h4>Windows Server 2022 - Nouvelles fonctionnalités</h4>
                         <p>Windows Server 2022 apporte des améliorations significatives en termes de sécurité (TLS 1.3, SMB over QUIC), de performance et de gestion. Utilisé dans le projet IFIDE, cette version offre des améliorations pour Active Directory, DHCP Failover et les services de réplication DFS.</p>
+                    </div>
+                </div>
+
+                <h3><i class="fas fa-phone"></i> Téléphonie VoIP et messagerie</h3>
+                <div class="article-list">
+                    <div class="veille-article">
+                        <h4>Asterisk - Serveur de téléphonie VoIP open-source</h4>
+                        <p>Asterisk est un autocommutateur téléphonique (PABX) logiciel open-source permettant de créer des solutions de téléphonie sur IP. Il prend en charge le protocole PJSIP (successeur de SIP) pour la gestion des utilisateurs, extensions et messagerie vocale. Dans le projet AP4, Asterisk est déployé sur Debian pour assurer la communication VoIP des agents du COD, accessible uniquement depuis le LAN ou via VPN Road Warrior. La configuration repose sur trois fichiers principaux (pjsip.conf, extensions.conf, voicemail.conf) et des softphones clients pour les postes utilisateurs.</p>
+                    </div>
+                    <div class="veille-article">
+                        <h4>Modoboa - Serveur de messagerie web avec synchronisation LDAP</h4>
+                        <p>Modoboa est une solution de messagerie open-source basée sur Python/Django offrant une interface webmail et des outils d'administration. Déployée sur Debian dans le projet AP4, elle est couplée à l'Active Directory via la synchronisation LDAP (ldapsync), permettant aux utilisateurs AD de se connecter directement avec leurs identifiants de domaine. La sécurisation du serveur mail passe par la mise en place de DKIM (signature cryptographique des emails), SPF (liste des serveurs autorisés à émettre pour le domaine) et DMARC (politique de traitement des emails non conformes), configurés via des enregistrements DNS. Le serveur de messagerie reste inaccessible depuis l'extérieur sans VPN établi.</p>
+                    </div>
+                </div>
+
+                <h3><i class="fas fa-chart-line"></i> Supervision et monitoring</h3>
+                <div class="article-list">
+                    <div class="veille-article">
+                        <h4>Zabbix - Solution de supervision open-source</h4>
+                        <p>Zabbix est une plateforme de monitoring en temps réel permettant de surveiller serveurs, équipements réseau et services. Utilisé dans le projet AP4 pour la supervision du COD, il collecte les métriques via deux mécanismes : l'agent Zabbix (installé directement sur les hôtes Windows et Linux pour remonter des données détaillées de performance) et SNMP (Simple Network Management Protocol, utilisé pour surveiller les routeurs et pare-feux pfSense sans agent). La configuration des alertes mail permet d'informer automatiquement les administrateurs en cas de dysfonctionnement. Le déploiement repose sur une base MariaDB et un frontend web accessible via navigateur.</p>
                     </div>
                 </div>
 
