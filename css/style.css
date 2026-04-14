@@ -333,11 +333,7 @@ body {
     color: var(--text-secondary);
     margin-top: 1rem;
     font-weight: 400;
-    min-height: 2rem;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 .profile-content {
