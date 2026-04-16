@@ -86,24 +86,6 @@ function initSubtitleFade() {
     }, 3000);
 }
 
-// ========================================
-// Skill Bars Animation
-// ========================================
-function initSkillBars() {
-    const bars = document.querySelectorAll('.skill-bar-fill');
-    if (!bars.length) return;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.width = entry.target.getAttribute('data-width');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
-
-    bars.forEach(bar => observer.observe(bar));
-}
 
 // ========================================
 // PDF Document Modal
@@ -309,6 +291,57 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initReadingProgress();
     initSubtitleFade();
-    initSkillBars();
     initShareButton();
+    initScrollReveal();
+    initVeilleFilter();
 });
+
+// ========================================
+// Scroll Reveal (Intersection Observer)
+// ========================================
+function initScrollReveal() {
+    const elements = document.querySelectorAll('.reveal');
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                // Stagger delay based on sibling index
+                const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
+                const idx = siblings.indexOf(entry.target);
+                entry.target.style.transitionDelay = (idx * 80) + 'ms';
+                entry.target.classList.add('visible');
+                // Animate skill bars inside this element
+                        observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    elements.forEach(el => observer.observe(el));
+}
+
+// ========================================
+// Veille Technologique Filter
+// ========================================
+function initVeilleFilter() {
+    const filterBtns = document.querySelectorAll('.veille-filter .filter-btn');
+    const sections = document.querySelectorAll('.veille-section-block');
+    if (!filterBtns.length) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.dataset.filter;
+            sections.forEach(sec => {
+                if (filter === 'all' || sec.dataset.category === filter) {
+                    sec.style.display = 'block';
+                    sec.style.animation = 'fadeInUp 0.4s ease-out';
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
+        });
+    });
+}

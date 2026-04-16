@@ -27,6 +27,7 @@
             <li><a href="experiences.html" class="nav-link"><i class="fas fa-briefcase"></i> Expériences</a></li>
             <li><a href="projets.html" class="nav-link"><i class="fas fa-code"></i> Projets</a></li>
             <li><a href="certifications.html" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a></li>
+            <li><a href="competences.html" class="nav-link"><i class="fas fa-tasks"></i> Compétences BTS</a></li>
             <li><a href="veille.html" class="nav-link active"><i class="fas fa-rss"></i> Veille Tech</a></li>
             <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
@@ -83,7 +84,19 @@
                 </div>
             </div>
 
+            <!-- Filtres -->
+            <div class="veille-filter">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="parc"><i class="fas fa-server"></i> Parc & Inventaire</button>
+                <button class="filter-btn" data-filter="reseau"><i class="fas fa-network-wired"></i> Réseau</button>
+                <button class="filter-btn" data-filter="securite"><i class="fas fa-shield-alt"></i> Sécurité</button>
+                <button class="filter-btn" data-filter="ha"><i class="fas fa-sync-alt"></i> Haute Dispo.</button>
+                <button class="filter-btn" data-filter="voip"><i class="fas fa-phone"></i> VoIP & Mail</button>
+                <button class="filter-btn" data-filter="supervision"><i class="fas fa-chart-line"></i> Supervision</button>
+            </div>
+
             <div class="veille-articles">
+                <div class="veille-section-block" data-category="parc">
                 <h3><i class="fas fa-server"></i> Gestion de parc et inventaire</h3>
                 <div class="article-list">
                     <div class="veille-article">
@@ -96,6 +109,8 @@
                     </div>
                 </div>
 
+                </div><!-- end parc -->
+                <div class="veille-section-block" data-category="reseau">
                 <h3><i class="fas fa-network-wired"></i> Infrastructure réseau et services</h3>
                 <div class="article-list">
                     <div class="veille-article">
@@ -108,6 +123,8 @@
                     </div>
                 </div>
 
+                </div><!-- end reseau -->
+                <div class="veille-section-block" data-category="securite">
                 <h3><i class="fas fa-shield-alt"></i> Sécurité et pare-feu</h3>
                 <div class="article-list">
                     <div class="veille-article">
@@ -128,6 +145,8 @@
                     </div>
                 </div>
 
+                </div><!-- end securite -->
+                <div class="veille-section-block" data-category="ha">
                 <h3><i class="fas fa-sync-alt"></i> Haute disponibilité et stockage</h3>
                 <div class="article-list">
                     <div class="veille-article">
@@ -148,6 +167,8 @@
                     </div>
                 </div>
 
+                </div><!-- end ha -->
+                <div class="veille-section-block" data-category="voip">
                 <h3><i class="fas fa-phone"></i> Téléphonie VoIP et messagerie</h3>
                 <div class="article-list">
                     <div class="veille-article">
@@ -160,6 +181,8 @@
                     </div>
                 </div>
 
+                </div><!-- end voip -->
+                <div class="veille-section-block" data-category="supervision">
                 <h3><i class="fas fa-chart-line"></i> Supervision et monitoring</h3>
                 <div class="article-list">
                     <div class="veille-article">
@@ -168,6 +191,7 @@
                     </div>
                 </div>
 
+                </div><!-- end supervision -->
             </div>
         </section>
 
