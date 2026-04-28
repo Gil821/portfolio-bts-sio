@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications - Gil DELORY SILVESTRE | BTS SIO</title>
-        <meta name="description" content="Certifications de Gil DELORY SILVESTRE en cybersecurite, reseaux et infrastructure informatique.">
-    <meta property="og:title" content="Certifications - Gil DELORY SILVESTRE | BTS SIO SISR">
-    <meta property="og:description" content="Certifications de Gil DELORY SILVESTRE en cybersecurite, reseaux et infrastructure informatique.">
+    <title>Épreuves E5 - E6 - Gil DELORY SILVESTRE | BTS SIO</title>
+    <meta name="description" content="Épreuves E5 et E6 BTS SIO SISR de Gil DELORY SILVESTRE - Documents officiels et annexes.">
+    <meta property="og:title" content="Épreuves E5 - E6 - Gil DELORY SILVESTRE | BTS SIO SISR">
+    <meta property="og:description" content="Épreuves E5 et E6 BTS SIO SISR de Gil DELORY SILVESTRE.">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/style.css">
@@ -26,9 +26,9 @@
             <li><a href="formations.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Formations</a></li>
             <li><a href="experiences.html" class="nav-link"><i class="fas fa-briefcase"></i> Expériences</a></li>
             <li><a href="projets.html" class="nav-link"><i class="fas fa-code"></i> Projets</a></li>
-            <li><a href="certifications.html" class="nav-link active"><i class="fas fa-certificate"></i> Certifications</a></li>
+            <li><a href="certifications.html" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a></li>
             <li><a href="competences.html" class="nav-link"><i class="fas fa-tasks"></i> Compétences BTS</a></li>
-            <li><a href="epreuves.html" class="nav-link"><i class="fas fa-file-alt"></i> Épreuves E5 - E6</a></li>
+            <li><a href="epreuves.html" class="nav-link active"><i class="fas fa-file-alt"></i> Épreuves E5 - E6</a></li>
             <li><a href="veille.html" class="nav-link"><i class="fas fa-rss"></i> Veille Tech</a></li>
             <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
@@ -41,26 +41,40 @@
 
     <!-- Contenu principal -->
     <main class="main-content">
-        
-        <!-- Section Certifications -->
-        <section id="certifications" class="section">
-            <h2 class="section-title"><i class="fas fa-certificate"></i> Mes Certifications</h2>
-            
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
-                    <span class="cert-date">Mai 2023</span>
-                    <h4>Cisco ITE</h4>
-                    <p>IT Essentials - Certification Cisco</p>
+        <section id="epreuves" class="section">
+            <h2 class="section-title"><i class="fas fa-file-alt"></i> Épreuves E5 - E6</h2>
+
+            <!-- E5 -->
+            <div class="competences-bloc reveal">
+                <div class="competences-bloc-header">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Épreuve E5 — Support et mise à disposition de services informatiques</h3>
+                    <span class="bloc-code">BTS SIO</span>
                 </div>
-                
-                <div class="certification-card">
-                    <div class="cert-icon"><i class="fas fa-bolt"></i></div>
-                    <span class="cert-date">Janvier 2023</span>
-                    <h4>Habilitation Électrique B0-BE</h4>
-                    <p>Habilitation pour travaux d'ordre non électrique</p>
+                <div class="doc-download">
+                    <a href="docs/Tableau de synthèse E5.xlsx" download class="btn-doc">
+                        <i class="fas fa-file-excel"></i> Tableau de synthèse E5
+                    </a>
+                    <button class="btn-doc" onclick="openDocModal('Attestation de travail', 'docs/Attestation.de.travail GIL 27-04-26.pdf')">
+                        <i class="fas fa-file-pdf"></i> Attestation de travail
+                    </button>
                 </div>
             </div>
+
+            <!-- E6 -->
+            <div class="competences-bloc reveal">
+                <div class="competences-bloc-header">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Épreuve E6 — Administration des systèmes et des réseaux</h3>
+                    <span class="bloc-code">Option SISR</span>
+                </div>
+                <div class="doc-download">
+                    <button class="btn-doc" onclick="openDocModal('Annexes E6 — Administration des systèmes et des réseaux 2026', 'docs/BTS_SIO_Annexes_VII_Epreuve E6 Administration des systèmes et des réseaux_2026_V2 REMPLI.pdf')">
+                        <i class="fas fa-file-pdf"></i> Annexes E6
+                    </button>
+                </div>
+            </div>
+
         </section>
 
         <!-- Footer -->
